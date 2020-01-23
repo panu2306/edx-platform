@@ -57,6 +57,8 @@ from util.date_utils import strftime_localized
 from xmodule.modulestore.django import modulestore
 from xmodule.modulestore.exceptions import ItemNotFoundError
 from xmodule.x_module import STUDENT_VIEW
+import lms.djangoapps.course_blocks.api as course_blocks_api
+from openedx.features.content_type_gating.helpers import CONTENT_GATING_PARTITION_ID
 
 log = logging.getLogger(__name__)
 
@@ -413,7 +415,9 @@ def get_course_date_blocks(course, user, request=None, include_past_dates=False,
     if DATE_WIDGET_V2_FLAG.is_enabled(course.id):
         blocks.append(CourseExpiredDate(course, user))
         blocks.extend(get_course_assignment_due_dates(
-            course, user, request, num_return=num_assignments, include_past_dates=include_past_dates))
+            course, user, request, num_return=num_assignments,
+            include_past_dates=include_past_dates, include_access=True
+        ))
 
     return sorted((b for b in blocks if b.date and (b.is_enabled or include_past_dates)), key=date_block_key_fn)
 
@@ -426,7 +430,8 @@ def date_block_key_fn(block):
     return block.date or datetime.max.replace(tzinfo=pytz.UTC)
 
 
-def get_course_assignment_due_dates(course, user, request, num_return=None, include_past_dates=False):
+def get_course_assignment_due_dates(course, user, request, num_return=None,
+                                    include_past_dates=False, include_access=False):
     """
     Returns a list of assignment (at the subsection/sequential level) due date
     blocks for the given course. Will return num_return results or all results
@@ -442,6 +447,9 @@ def get_course_assignment_due_dates(course, user, request, num_return=None, incl
                 date_block = CourseAssignmentDate(course, user)
                 date_block.date = date
 
+                if include_access:
+                    date_block.requires_full_access = _requires_full_access(user, block_key)
+
                 block_url = None
                 now = datetime.now().replace(tzinfo=pytz.UTC)
                 assignment_released = item.start < now if item.start else None
@@ -456,6 +464,24 @@ def get_course_assignment_due_dates(course, user, request, num_return=None, incl
     if num_return:
         return date_blocks[:num_return]
     return date_blocks
+
+
+def _requires_full_access(user, block_key):
+    """
+    Returns a boolean if any child of the block_key specified has a group_access array consisting of just full_access
+    """
+    store = modulestore()
+    child_block_keys = course_blocks_api.get_course_blocks(user, block_key)
+    requires_full_access = False
+    for child_block_key in child_block_keys:
+        child_block = store.get_item(child_block_key)
+        # If group_access is set on the block, and the content gating is
+        # only full access, set the value on the CourseAssignmentDate object
+        if(child_block.group_access and child_block.group_access.get(CONTENT_GATING_PARTITION_ID) == [
+            settings.CONTENT_TYPE_GATE_GROUP_IDS['full_access']
+        ]):
+            requires_full_access = True
+    return requires_full_access
 
 
 # TODO: Fix this such that these are pulled in as extra course-specific tabs.
