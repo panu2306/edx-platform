@@ -62,9 +62,14 @@ class CourseHomeView(CourseTabView):
     @method_decorator(ensure_valid_course_key)
     @method_decorator(add_maintenance_banner)
     def get(self, request, course_id, **kwargs):
+        print('IN THE METOD')
         """
         Displays the home page for the specified course.
         """
+        return super(CourseHomeView, self).get(request, course_id, 'courseware', **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        print('just posted')
         return super(CourseHomeView, self).get(request, course_id, 'courseware', **kwargs)
 
     def uses_bootstrap(self, request, course, tab):
