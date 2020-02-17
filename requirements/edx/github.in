@@ -61,6 +61,7 @@ git+https://github.com/edx/MongoDBProxy.git@d92bafe9888d2940f647a7b2b2383b29c752
 -e git+https://github.com/dementrock/pystache_custom.git@776973740bdaad83a3b029f96e415a7d1e8bec2f#egg=pystache_custom-dev
 -e git+https://github.com/jazkarta/edx-jsme.git@690dbf75441fa91c7c4899df0b83d77f7deb5458#egg=edx-jsme
 -e git+https://github.com/jsocol/django-ratelimit.git@72edbe8949fbf6699848e5847645a1998f121d46#egg=ratelimit
+git+https://github.com/edx/django-babel-underscore.git@55d44e3ed76efd18fbc27d35752deb49b0398093#egg=django-babel-underscore==0.6.0
 
 # Forked to get Django 2.2 support from unreleased master branch from social-app-django repo.
 # This can be removed once an official social-auth-app-django Pypi release with Django 2.2 support is available in the future.
