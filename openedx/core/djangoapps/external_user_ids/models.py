@@ -13,6 +13,7 @@ from logging import getLogger
 
 LOGGER = getLogger(__name__)
 
+
 class ExternalIdType(TimeStampedModel):
     """
     ExternalIdType defines the type (purpose, or expected use) of an external id. A user may have one id that is sent
