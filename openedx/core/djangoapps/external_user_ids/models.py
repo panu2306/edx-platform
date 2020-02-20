@@ -4,12 +4,13 @@ Models for External User Ids that are sent out of Open edX
 
 import uuid as uuid_tools
 
+from logging import getLogger
+
 from django.contrib.auth.models import User
 from django.db import models
 from model_utils.models import TimeStampedModel
 from simple_history.models import HistoricalRecords
 
-from logging import getLogger
 
 LOGGER = getLogger(__name__)
 

@@ -1,3 +1,7 @@
+"""
+Signal Handlers for External User Ids to be created and maintainer
+"""
+
 from logging import getLogger
 
 from django.db.models.signals import post_save
@@ -11,7 +15,9 @@ LOGGER = getLogger(__name__)
 
 
 @receiver(post_save, sender=CourseEnrollment)
-def create_external_id_for_microbachelors_program(sender, instance, created, **kwargs):
+def create_external_id_for_microbachelors_program(
+    sender, instance, created, **kwargs  # pylint: disable=unused-argument
+):
     """
     Watches for post_save signal for creates on the CourseEnrollment table.
     Generate an External ID if the Enrollment is in a MicroBachelors Program
