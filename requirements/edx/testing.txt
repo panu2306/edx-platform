@@ -65,7 +65,7 @@ distlib==0.3.0            # via virtualenv
 git+https://github.com/django-compressor/django-appconf@1526a842ee084b791aa66c931b3822091a442853#egg=django-appconf
 django-babel-underscore==0.5.2
 django-babel==0.6.2
-git+https://github.com/edx/django-celery.git@756cb57aad765cb2b0d37372c1855b8f5f37e6b0#egg=django-celery==3.2.1+edx.2
+django-celery==3.3.1
 django-classy-tags==1.0.0
 django-config-models==2.0.0
 django-cors-headers==2.5.3
@@ -199,7 +199,6 @@ packaging==20.1
 pandas==0.22.0
 path.py==12.4.0
 path==13.1.0
-pathlib2==2.3.5           # via pytest
 pathtools==0.1.2
 paver==1.3.4
 pbr==5.4.4
@@ -281,7 +280,7 @@ staff-graded-xblock==0.7
 stevedore==1.32.0
 super-csv==0.9.6
 sympy==1.5.1
-testfixtures==6.13.0
+testfixtures==6.13.1
 text-unidecode==1.3
 toml==0.10.0              # via tox
 tox-battery==0.5.2

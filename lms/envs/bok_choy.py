@@ -95,7 +95,6 @@ PIPELINE['JS_COMPRESSOR'] = None
 ################################# CELERY ######################################
 
 CELERY_ALWAYS_EAGER = True
-CELERY_RESULT_BACKEND = 'djcelery.backends.cache:CacheBackend'
 
 BLOCK_STRUCTURES_SETTINGS = dict(
     # We have CELERY_ALWAYS_EAGER set to True, so there's no asynchronous

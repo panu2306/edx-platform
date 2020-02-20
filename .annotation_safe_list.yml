@@ -109,24 +109,6 @@ django_openid_auth.UserOpenID:
   ".. pii_types:": external_service, password
   ".. pii_retirement:": retained
 
-# Via django-celery
-djcelery.CrontabSchedule:
-  ".. no_pii:": "No PII"
-djcelery.IntervalSchedule:
-  ".. no_pii:": "No PII"
-djcelery.PeriodicTask:
-  ".. no_pii:": "No PII"
-djcelery.PeriodicTasks:
-  ".. no_pii:": "No PII"
-djcelery.TaskMeta:
-  ".. no_pii:": "No PII"
-djcelery.TaskSetMeta:
-  ".. no_pii:": "No PII"
-djcelery.TaskState:
-  ".. no_pii:": "No PII"
-djcelery.WorkerState:
-  ".. no_pii:": "No PII"
-
 # Via edx-oauth2-provider https://github.com/edx/edx-oauth2-provider
 edx_oauth2_provider.TrustedClient:
   ".. no_pii:": "No PII"

@@ -1229,7 +1229,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djcelery',
     'method_override',
 
     # Common Initialization
