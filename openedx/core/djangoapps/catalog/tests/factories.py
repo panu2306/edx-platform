@@ -219,6 +219,7 @@ class ProgramFactory(DictFactoryBase):
     subtitle = factory.Faker('sentence')
     title = factory.Faker('catch_phrase')
     type = factory.Faker('word')
+    type_slug = factory.Faker('word')
     uuid = factory.Faker('uuid4')
     video = VideoFactory()
     weeks_to_complete = fake.random_int(1, 45)
