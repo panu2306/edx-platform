@@ -26,10 +26,6 @@ def get_redirect_url(course_key, usage_key, request=None):
         Redirect url string
     """
 
-    if should_redirect_to_courseware_microfrontend(course_key):
-        path = path_to_location(modulestore(), usage_key, request, full_path=True)
-        return get_microfrontend_redirect_url(course_key, path)
-
     (
         course_key, chapter, section, vertical_unused,
         position, final_target_id
