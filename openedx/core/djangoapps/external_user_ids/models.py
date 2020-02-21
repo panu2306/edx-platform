@@ -22,6 +22,9 @@ class ExternalIdType(TimeStampedModel):
 
     .. no_pii:
     """
+    class Meta(object):
+        app_label = "external_id_type"
+
     MICROBACHELORS_COACHING = 'mb_coaching'
 
     name = models.CharField(max_length=32, blank=False, unique=True, db_index=True)
@@ -43,6 +46,9 @@ class ExternalId(TimeStampedModel):
     external_id_type = models.ForeignKey(ExternalIdType, db_index=True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, db_index=True, on_delete=models.CASCADE)
     history = HistoricalRecords()
+
+    class Meta(object):
+        app_label = "external_id"
 
     @classmethod
     def user_has_external_id(cls, user, type_name):
