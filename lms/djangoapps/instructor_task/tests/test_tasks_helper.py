@@ -422,7 +422,7 @@ class TestInstructorGradeReport(InstructorGradeReportTestCase):
             SoftwareSecurePhotoVerificationFactory.create(user=user, status='approved')
 
         RequestCache.clear_all_namespaces()
-        expected_query_count = 45
+        expected_query_count = 46
         with patch('lms.djangoapps.instructor_task.tasks_helper.runner._get_current_task'):
             with check_mongo_calls(mongo_count):
                 with self.assertNumQueries(expected_query_count):
