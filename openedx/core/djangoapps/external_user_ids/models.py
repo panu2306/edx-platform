@@ -22,9 +22,6 @@ class ExternalIdType(TimeStampedModel):
 
     .. no_pii:
     """
-    class Meta(object):
-        app_label = "external_id_type"
-
     MICROBACHELORS_COACHING = 'mb_coaching'
 
     name = models.CharField(max_length=32, blank=False, unique=True, db_index=True)
