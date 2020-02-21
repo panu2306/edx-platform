@@ -5,7 +5,7 @@
 #
 # Translators:
 # adem ÖZGÜR <admozgur@gmail.com>, 2015
-# Ali Işıngör <ali@artistanbul.io>, 2017-2019
+# Ali Işıngör <ali@artistanbul.io>, 2017-2020
 # ali selek <aliselek01@gmail.com>, 2015
 # baris <brscvs@gmail.com>, 2013-2014
 # baris <brscvs@gmail.com>, 2013
@@ -71,7 +71,7 @@
 #
 # Translators:
 # adem ÖZGÜR <admozgur@gmail.com>, 2015
-# Ali Işıngör <ali@artistanbul.io>, 2017-2019
+# Ali Işıngör <ali@artistanbul.io>, 2017-2020
 # ali selek <aliselek01@gmail.com>, 2015
 # Emrah Emirtekin <eemirtekin@gmail.com>, 2015
 # Erdoğan Şahin, 2016
@@ -90,7 +90,7 @@
 #
 # Translators:
 # adem ÖZGÜR <admozgur@gmail.com>, 2015
-# Ali Işıngör <ali@artistanbul.io>, 2018
+# Ali Işıngör <ali@artistanbul.io>, 2018,2020
 # ali selek <aliselek01@gmail.com>, 2015
 # Berfin Dilbazer <berfindilbazer@gmail.com>, 2016
 # Emrah Emirtekin <eemirtekin@gmail.com>, 2015
@@ -107,8 +107,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2020-02-02 20:42+0000\n"
-"PO-Revision-Date: 2019-12-04 19:20+0000\n"
+"POT-Creation-Date: 2020-02-16 20:42+0000\n"
+"PO-Revision-Date: 2020-02-20 16:22+0000\n"
 "Last-Translator: Ali Işıngör <ali@artistanbul.io>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/open-edx/edx-platform/language/tr_TR/)\n"
 "Language: tr_TR\n"
@@ -761,7 +761,7 @@ msgstr "Kopyala"
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Could not find the specified string."
-msgstr "Belirlenen dizi bulunamadı."
+msgstr "Belirtilen dizi bulunamadı."
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -2046,11 +2046,11 @@ msgstr ""
 
 #: common/static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx
 msgid "Navigate up"
-msgstr ""
+msgstr "Yukarı git"
 
 #: common/static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx
 msgid "Browsing"
-msgstr ""
+msgstr "Göz atılıyor"
 
 #: common/static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx
 msgid "Select"
@@ -2164,6 +2164,8 @@ msgstr ""
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This response could not be unendorsed. Refresh the page and try again."
 msgstr ""
+"Bu cevabın öne çıkarılması iptal edilemedi. Sayfayı yeniden yükleyin ve "
+"tekrar deneyin."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This vote could not be processed. Refresh the page and try again."
@@ -2535,7 +2537,11 @@ msgstr "Mâli Yardım"
 
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "Masters"
-msgstr ""
+msgstr "Yüksek Lisanslar"
+
+#: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
+msgid "MicroMasters"
+msgstr "MicroMaster Programları"
 
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "MicroBachelors"
@@ -2551,7 +2557,7 @@ msgstr "Gözetmenli"
 
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "Security"
-msgstr ""
+msgstr "Güvenlik"
 
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 #: cms/templates/js/asset-library.underscore
@@ -3415,7 +3421,7 @@ msgstr[1] "%s ders görüntüleniyor"
 #: lms/static/js/discovery/views/search_form.js
 #, javascript-format
 msgid "We couldn't find any results for \"%s\"."
-msgstr "\"%s\" için hiç bir sonuç bulunamadı."
+msgstr "\"%s\" için hiçbir sonuç bulunamadı."
 
 #: lms/static/js/discovery/views/search_form.js
 #: openedx/features/course_search/static/course_search/templates/search_error.underscore
@@ -4721,6 +4727,9 @@ msgid ""
 " data is permanent and cannot be undone. {platformName} will not be able to "
 "recover your account or the data that is deleted."
 msgstr ""
+"\"Hesabımı sil\"i seçtiniz. Hesabınızın ve kişisel verilerinizin silinmesi "
+"kalıcı olup, sonradan geri döndürülemez. {platformName} platformu silinen "
+"hesap ya da verilerinizi hiçbir şekilde geri getiremez."
 
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid ""
@@ -7360,6 +7369,10 @@ msgstr ""
 msgid "Upload Memberships"
 msgstr ""
 
+#: lms/djangoapps/teams/static/teams/templates/manage.underscore
+msgid "Error assigning team memberships"
+msgstr ""
+
 #: lms/djangoapps/teams/static/teams/templates/team-actions.underscore
 msgid "Are you having trouble finding a team to join?"
 msgstr "Katılacak bir takım bulmada sorun mu yaşıyorsunuz?"
@@ -9445,8 +9458,8 @@ msgid ""
 "Caution: The last published version of this unit is live. By publishing "
 "changes you will change the student experience."
 msgstr ""
-"Dikkat: Bu birimin son yayınlanan versiyonu canlıdır. Değişiklikleri "
-"yayınlayarak öğrencilerin deneyimlerini değiştirirsiniz."
+"Dikkat: Bu ünitenin son yayınlanan sürümü canlıdadır. Değişiklikleri "
+"yayınladığınızda öğrenci deneyimini değiştirirsiniz."
 
 #: cms/templates/js/content-group-editor.underscore
 msgid "Content Group Name"
@@ -9527,7 +9540,7 @@ msgstr ""
 
 #: cms/templates/js/copy-clipboard-button.underscore
 msgid "Copy Component Location"
-msgstr ""
+msgstr "Bileşen Konumunu Kopyala"
 
 #: cms/templates/js/course-highlights-enable.underscore
 msgid "Weekly Highlight Emails"
@@ -9964,7 +9977,7 @@ msgstr "Bir bölüm ekle"
 
 #: cms/templates/js/edit-title-button.underscore
 msgid "Edit Title"
-msgstr ""
+msgstr "Başlığı Düzenle"
 
 #: cms/templates/js/grading-editor.underscore
 msgid "Grading"
