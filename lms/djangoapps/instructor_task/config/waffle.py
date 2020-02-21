@@ -41,4 +41,3 @@ def new_ui_for_data_download_csv_reports(course_key):
     Returns whether new UI is enabled for CSV reports in instructor dashboard for a given course.
     """
     return waffle_flags()[DATA_DOWNLOAD_REPORTS_NEW_UI].is_enabled(course_key)
-
