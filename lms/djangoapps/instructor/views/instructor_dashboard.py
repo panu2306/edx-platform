@@ -26,6 +26,8 @@ from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from six import text_type
 from six.moves.urllib.parse import urljoin  # pylint: disable=import-error
+
+from instructor_task.config.waffle import new_ui_for_data_download_csv_reports
 from xblock.field_data import DictFieldData
 from xblock.fields import ScopeIds
 
@@ -232,7 +234,6 @@ def instructor_dashboard_2(request, course_id):
     )
 
     certificate_invalidations = CertificateInvalidation.get_certificate_invalidations(course_key)
-
     context = {
         'course': course,
         'studio_url': get_studio_url(course, 'course'),
@@ -243,6 +244,7 @@ def instructor_dashboard_2(request, course_id):
         'certificate_invalidations': certificate_invalidations,
         'generate_certificate_exceptions_url': generate_certificate_exceptions_url,
         'generate_bulk_certificate_exceptions_url': generate_bulk_certificate_exceptions_url,
+        'enable_new_ui_for_csv_reports': new_ui_for_data_download_csv_reports(course_key),
         'certificate_exception_view_url': certificate_exception_view_url,
         'certificate_invalidation_view_url': certificate_invalidation_view_url,
         'xqa_server': settings.FEATURES.get('XQA_SERVER', "http://your_xqa_server.com"),
